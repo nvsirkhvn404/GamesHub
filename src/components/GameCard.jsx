@@ -3,6 +3,7 @@ import {
 	CardContent,
 	CardHeader,
 } from "@/components/ui/card";
+import PlatformIconList from "./PlatformIconList";
 
 export default function GameCard({ game }) {
 	return (
@@ -11,7 +12,8 @@ export default function GameCard({ game }) {
 				<img src={game.background_image}/>
 			</CardHeader>
 			<CardContent>
-				<h2>{game.name}</h2>
+				<h2 className="text-2xl font-bold">{game.name}</h2>
+				<PlatformIconList platforms={game.parent_platforms.map(p => p.platform)} />
 			</CardContent>
 		</Card>
 	);
