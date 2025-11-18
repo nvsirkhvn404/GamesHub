@@ -7,7 +7,7 @@ import {
 	FaAndroid,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
+import { SiNintendoswitch } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 
 export default function PlatformIconList({ platforms }) {
@@ -15,7 +15,7 @@ export default function PlatformIconList({ platforms }) {
 		pc: FaWindows,
 		playstation: FaPlaystation,
 		xbox: FaXbox,
-		nintendo: SiNintendo,
+		nintendo: SiNintendoswitch,
 		mac: FaApple,
 		linux: FaLinux,
 		android: FaAndroid,
@@ -24,7 +24,7 @@ export default function PlatformIconList({ platforms }) {
 	};
 
 	return (
-		<div className="flex gap-2 text-stone-500 my-1">
+		<div className="flex gap-1.5 text-stone-500 my-1">
 			{platforms.map((platform) => {
 				const IconComponent = iconMap[platform.slug];
 				return <IconComponent key={platform.id}/>;
