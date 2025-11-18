@@ -1,9 +1,11 @@
 import GamesGrid from "./components/GamesGrid";
+import GenreList from "./components/GenreList";
 
 export default function App() {
 	return (
-		<>
-			<GamesGrid/>
-		</>
+		<div className="flex">
+			<GenreList />
+			<GamesGrid />
+		</div>
 	);
 }
