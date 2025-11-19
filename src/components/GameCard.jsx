@@ -10,12 +10,13 @@ export default function GameCard({ game }) {
 				<img src={getCroppedImageUrl(game.background_image)} />
 			</CardHeader>
 			<CardContent>
-				<h2 className="text-2xl font-bold">{game.name}</h2>
+				<h2 className="text-2xl lg:text-xl font-bold">{game.name}</h2>
 				<div className="flex justify-between gap-1">
 					<PlatformIconList
 						platforms={game.parent_platforms.map((p) => p.platform)}
 					/>
 					<CriticScore score={game.metacritic} />
+					
 				</div>
 			</CardContent>
 		</Card>

@@ -5,10 +5,12 @@ import Header from "./components/Header";
 export default function App() {
 	return (
 		<>
-			<Header/>
+			<Header />
 			<div className="flex">
 				<GenreList />
-				<GamesGrid />
+				<div className="flex-1">
+					<GamesGrid />
+				</div>
 			</div>
 		</>
 	);
