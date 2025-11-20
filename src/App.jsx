@@ -10,7 +10,7 @@ export default function App() {
 
 	return (
 		<>
-			<Header />
+			<Header onSearch={(searchText) => setGameQuery({...gameQuery, searchText}) } />
 			<div className="flex">
 				<GenreList
 					selectedGenre={gameQuery.genre}
