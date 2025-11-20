@@ -9,7 +9,7 @@ export default function App() {
 		<>
 			<Header />
 			<div className="flex">
-				<GenreList onSelectGenre={(genre) => setselectedGenre(genre)}/>
+				<GenreList selectedGenre={selectedGenre} onSelectGenre={(genre) => setselectedGenre(genre)}/>
 				<div className="flex-1">
 					<GamesGrid selectedGenre={selectedGenre} />
 				</div>

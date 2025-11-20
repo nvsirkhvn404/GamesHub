@@ -3,7 +3,7 @@ import getCroppedImageUrl from "@/services/image-url";
 import { GenreListSkeleton } from "./GenreListSkeleton";
 import { Button } from "./ui/button";
 
-export default function GenreList({ onSelectGenre }) {
+export default function GenreList({ selectedGenre, onSelectGenre }) {
 	const { data, isLoading, error } = useGenres();
 	const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -20,13 +20,13 @@ export default function GenreList({ onSelectGenre }) {
 	return (
 		<ul className="bg-card border-t hidden sm:flex sm:flex-col p-3">
 			{data.map((genre) => (
-				<li key={genre.id} className="bg-stone-700 rounded-xl px-4 p-2 m-2">
+				<li key={genre.id} className={genre.id === selectedGenre?.id ? "bg-white rounded-xl px-4 p-2 m-2 " : "bg-stone-700 rounded-xl px-4 p-2 m-2" }>
 					<div className="flex items-center">
 						<img
 							src={getCroppedImageUrl(genre.image_background)}
 							className="size-8 rounded-xl"
 						/>
-						<Button onClick={() => onSelectGenre(genre)} variant="link" className="font-bold">{genre.name}</Button>
+						<Button  onClick={() => onSelectGenre(genre)} variant="link" className={genre.id === selectedGenre?.id ? "font-bold text-stone-700" : "font-bold"}>{genre.name}</Button>
 					</div>
 				</li>
 			))}
