@@ -2,8 +2,8 @@ import useGames from "@/hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
-export default function GamesGrid() {
-	const { data, error, isLoading } = useGames();
+export default function GamesGrid({ selectedGenre }) {
+	const { data, error, isLoading } = useGames(selectedGenre);
 	const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 	return (
