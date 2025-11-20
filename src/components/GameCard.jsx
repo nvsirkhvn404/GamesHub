@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "@/services/image-url";
+import Emoji from "./Emoji";
 
 export default function GameCard({ game }) {
 	return (
@@ -15,9 +16,11 @@ export default function GameCard({ game }) {
 						platforms={game.parent_platforms.map((p) => p.platform)}
 					/>
 					<CriticScore score={game.metacritic} />
-					
 				</div>
-				<h2 className="text-2xl lg:text-xl font-bold">{game.name}</h2>
+				<h2 className="text-2xl lg:text-xl font-bold">
+					{game.name}
+					<Emoji rating={game.rating_top} />
+				</h2>
 			</CardContent>
 		</Card>
 	);
