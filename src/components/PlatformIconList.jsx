@@ -24,10 +24,10 @@ const PlatformIconList = ({ platforms }) => {
 	};
 
 	return (
-		<div className="flex gap-1.5 text-stone-500 my-1">
+		<div className="flex gap-1.5 text-stone-500 my-2">
 			{platforms.map((platform) => {
 				const IconComponent = iconMap[platform.slug];
-				<IconComponent key={platform.id}/>;
+				return <IconComponent key={platform.id}/>;
 			})}
 		</div>
 	);

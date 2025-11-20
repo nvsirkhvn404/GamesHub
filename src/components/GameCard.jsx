@@ -5,12 +5,11 @@ import getCroppedImageUrl from "@/services/image-url";
 
 export default function GameCard({ game }) {
 	return (
-		<Card className="overflow-hidden p-0 gap-1 pb-4">
+		<Card className="overflow-hidden pt-0 pb-4 gap-1">
 			<CardHeader className="p-0">
 				<img src={getCroppedImageUrl(game.background_image)} />
 			</CardHeader>
-			<CardContent>
-				<h2 className="text-2xl lg:text-xl font-bold">{game.name}</h2>
+			<CardContent className="px-4">
 				<div className="flex justify-between gap-1 flex-wrap">
 					<PlatformIconList
 						platforms={game.parent_platforms.map((p) => p.platform)}
@@ -18,6 +17,7 @@ export default function GameCard({ game }) {
 					<CriticScore score={game.metacritic} />
 					
 				</div>
+				<h2 className="text-2xl lg:text-xl font-bold">{game.name}</h2>
 			</CardContent>
 		</Card>
 	);
