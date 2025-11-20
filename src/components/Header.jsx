@@ -1,11 +1,10 @@
+import SeacrhInput from "./SearchInput";
+
 export default function Header(){
     return (
-        <nav className="flex justify-between py-8 px-6 bg-card">
+        <nav className="flex justify-between p-8 bg-card items-center gap-4">
             <div>GamesHub</div>
-            <div className="flex gap-6">
-                <div>Home</div>
-                <div>About</div>
-            </div>
+            <SeacrhInput />
         </nav>
     );
 }
