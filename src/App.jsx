@@ -14,19 +14,23 @@ export default function App() {
 			<div className="flex">
 				<GenreList
 					selectedGenre={gameQuery.genre}
-					onSelectGenre={(genre) => setGameQuery( {...gameQuery, genre})}
+					onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
 				/>
 				<div className="flex-1 flex flex-col p-10 gap-4">
 					<div className="flex gap-4">
 						<PlatformSelector
 							selectedPlatform={gameQuery.platform}
-							onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}
+							onSelectPlatform={(platform) =>
+								setGameQuery({ ...gameQuery, platform })
+							}
 						/>
-						<SortSelector />
+						<SortSelector sortOrder={gameQuery.sortOrder}
+							onSelectSortOrder={(sortOrder) =>
+								setGameQuery({ ...gameQuery, sortOrder })
+							}
+						/>
 					</div>
-					<GamesGrid
-						gameQuery={gameQuery}
-					/>
+					<GamesGrid gameQuery={gameQuery} />
 				</div>
 			</div>
 		</>
