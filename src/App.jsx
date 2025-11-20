@@ -5,27 +5,25 @@ import Header from "./components/Header";
 import PlatformSelector from "./components/PlatformSelector";
 
 export default function App() {
-	const [selectedGenre, setSelectedGenre] = useState(null);
-	const [selectedPlatform, setSelectedPlatform] = useState(null);
+	const [gameQuery, setGameQuery] = useState({});
 
 	return (
 		<>
 			<Header />
 			<div className="flex">
 				<GenreList
-					selectedGenre={selectedGenre}
-					onSelectGenre={(genre) => setSelectedGenre(genre)}
+					selectedGenre={gameQuery.genre}
+					onSelectGenre={(genre) => setGameQuery( {...gameQuery, genre})}
 				/>
 				<div className="flex-1 flex flex-col p-10 gap-4">
 					<div>
 						<PlatformSelector
-							selectedPlatform={selectedPlatform}
-							onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+							selectedPlatform={gameQuery.platform}
+							onSelectPlatform={(platform) => setGameQuery({...gameQuery, platform})}
 						/>
 					</div>
 					<GamesGrid
-						selectedPlatform={selectedPlatform}
-						selectedGenre={selectedGenre}
+						gameQuery={gameQuery}
 					/>
 				</div>
 			</div>

@@ -1,14 +1,14 @@
 import useData from "./useData";
 
-export default function useGames(selectedGenre, selectedPlatform) {
+export default function useGames(gameQuery) {
 	return useData(
 		"/games",
 		{
 			params: {
-				genres: selectedGenre?.id,
-				platforms: selectedPlatform?.id,
+				genres: gameQuery.genre?.id,
+				platforms: gameQuery.platform?.id,
 			},
 		},
-		[selectedGenre?.id, selectedPlatform?.id]
+		[gameQuery]
 	);
 }
