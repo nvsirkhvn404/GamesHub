@@ -4,6 +4,7 @@ import GenreList from "./components/GenreList";
 import Header from "./components/Header";
 import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 export default function App() {
 	const [gameQuery, setGameQuery] = useState({});
@@ -17,6 +18,7 @@ export default function App() {
 					onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
 				/>
 				<div className="flex-1 flex flex-col p-10 gap-4">
+					<GameHeading gameQuery={gameQuery} />
 					<div className="flex gap-4">
 						<PlatformSelector
 							selectedPlatform={gameQuery.platform}

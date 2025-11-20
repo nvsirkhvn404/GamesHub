@@ -18,7 +18,7 @@ export default function GenreList({ selectedGenre, onSelectGenre }) {
 	);
 
 	return (
-		<ul className="bg-card border-t hidden sm:flex sm:flex-col p-3">
+		<ul className="bg-card border-r-2 hidden sm:flex sm:flex-col p-3">
 			{data.map((genre) => (
 				<li key={genre.id} className={genre.id === selectedGenre?.id ? "bg-white rounded-xl px-4 p-2 m-2 " : "bg-stone-700 rounded-xl px-4 p-2 m-2" }>
 					<div className="flex items-center">
