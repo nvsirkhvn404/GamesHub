@@ -26,8 +26,9 @@ const PlatformIconList = ({ platforms }) => {
 	return (
 		<div className="flex gap-1.5 text-stone-500 my-2">
 			{platforms.map((platform) => {
-				const IconComponent = iconMap[platform.slug];
-				return <IconComponent key={platform.id}/>;
+				const Icon = iconMap[platform.slug];
+				if (!Icon) return null;
+				return <Icon key={platform.id ?? platform.slug}/>;
 			})}
 		</div>
 	);

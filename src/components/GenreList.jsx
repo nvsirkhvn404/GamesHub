@@ -10,12 +10,12 @@ export default function GenreList({ selectedGenre, onSelectGenre }) {
 	if (error) return null;
 
 	return (
-		<div className="hidden sm:flex flex-col bg-card border-r-2">
+		<div className="hidden sm:flex flex-col border-r-2">
 			<h2 className="text-2xl sm:text-3xl md:text-4xl m-4 font-bold ">
 				Genres
 			</h2>
 			{isLoading ? (
-				<div className="bg-card hidden sm:flex sm:flex-col space-y-4 px-4">
+				<div className="hidden sm:flex sm:flex-col space-y-4 px-4">
 					{skeletons.map((skeleton) => (
 						<GenreListSkeleton key={skeleton} />
 					))}
@@ -27,8 +27,8 @@ export default function GenreList({ selectedGenre, onSelectGenre }) {
 							key={genre.id}
 							className={
 								genre.id === selectedGenre?.id
-									? "bg-[#e5e5e5] rounded-xl px-4 py-2"
-									: "bg-stone-700 rounded-xl px-4 p-2"
+									? "bg-neutral-700 rounded-xl px-4 py-2"
+									: "bg-card rounded-xl px-4 p-2"
 							}
 						>
 							<div className="flex items-center">
@@ -41,7 +41,7 @@ export default function GenreList({ selectedGenre, onSelectGenre }) {
 									variant="link"
 									className={
 										genre.id === selectedGenre?.id
-											? "font-bold text-stone-700 text-lg"
+											? "font-bold text-lg"
 											: "font-bold"
 									}
 								>
